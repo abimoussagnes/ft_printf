@@ -6,13 +6,13 @@
 /*   By: aabi-mou <aabi-mou@student.42beirut.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 15:06:33 by aabi-mou          #+#    #+#             */
-/*   Updated: 2025/11/14 12:27:09 by aabi-mou         ###   ########.fr       */
+/*   Updated: 2025/11/14 13:35:29 by aabi-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthex(unsigned int n, char format)
+int	ft_puthex(unsigned long n, char format)
 {
 	int		len;
 	char	*base;
@@ -44,9 +44,14 @@ static int	ft_specifier_check(char c, va_list args)
 	else if (c == 'u')
 		len = ft_putunbr(va_arg(args, unsigned int));
 	else if (c == 'x' || c == 'X')
-		len = ft_puthex(va_arg(args, unsigned int), c);
+		len = ft_puthex((unsigned long)va_arg(args, unsigned int), c);
 	else if (c == '%')
 		len = ft_putchar('%');
+	else
+	{
+		len += ft_putchar('%');
+		len += ft_putchar(c);
+	}
 	return (len);
 }
 
@@ -63,13 +68,16 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			if (format[i + 1] == '\0')
+			{
+				len += ft_putchar('%');
+				break ;
+			}
 			i++;
 			len += ft_specifier_check(format[i], args);
 		}
 		else
-		{
 			len += ft_putchar(format[i]);
-		}
 		i++;
 	}
 	va_end(args);

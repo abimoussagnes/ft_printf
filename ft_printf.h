@@ -6,7 +6,7 @@
 /*   By: aabi-mou <aabi-mou@student.42beirut.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 22:19:02 by aabi-mou          #+#    #+#             */
-/*   Updated: 2025/11/14 12:05:50 by aabi-mou         ###   ########.fr       */
+/*   Updated: 2025/11/14 13:20:36 by aabi-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int	ft_putstr(char *s);
 int	ft_putptr(unsigned long ptr);
 int	ft_putnbr(int n);
 int	ft_putunbr(unsigned int n);
-int	ft_puthex(unsigned int n, char format);
+int	ft_puthex(unsigned long n, char format);
 
 #endif
