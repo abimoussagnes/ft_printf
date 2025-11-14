@@ -6,21 +6,20 @@
 #    By: aabi-mou <aabi-mou@student.42beirut.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/12 22:17:03 by aabi-mou          #+#    #+#              #
-#    Updated: 2025/11/12 22:18:09 by aabi-mou         ###   ########.fr        #
+#    Updated: 2025/11/14 12:03:28 by aabi-mou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
-SRC = ft_printf.c
+SRC = ft_printf.c helper.c
 
 OBJ = $(SRC:.c=.o)
-OBJ_BONUS = $(BONUS:.c=.o)
 
 # Default target
 all: $(NAME)
@@ -35,7 +34,7 @@ $(NAME): $(OBJ)
 
 # Clean object files
 clean:
-	$(RM) $(OBJ) $(OBJ_BONUS)
+	$(RM) $(OBJ)
 
 # Full clean (including library)
 fclean: clean
