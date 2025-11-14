@@ -6,11 +6,27 @@
 /*   By: aabi-mou <aabi-mou@student.42beirut.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 15:06:33 by aabi-mou          #+#    #+#             */
-/*   Updated: 2025/11/14 11:59:47 by aabi-mou         ###   ########.fr       */
+/*   Updated: 2025/11/14 12:23:23 by aabi-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static int	ft_puthex(unsigned int n, char format)
+{
+	int		len;
+	char	*base;
+
+	len = 0;
+	if (format == 'x')
+		base = "0123456789abcdef";
+	else
+		base = "0123456789ABCDEF";
+	if (n >= 16)
+		len += ft_puthex(n / 16, format);
+	len += ft_putchar(base[n % 16]);
+	return (len);
+}
 
 static int	ft_specifier_check(char c, va_list args)
 {

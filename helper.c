@@ -6,7 +6,7 @@
 /*   By: aabi-mou <aabi-mou@student.42beirut.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 11:58:26 by aabi-mou          #+#    #+#             */
-/*   Updated: 2025/11/14 12:00:17 by aabi-mou         ###   ########.fr       */
+/*   Updated: 2025/11/14 12:23:13 by aabi-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,21 +80,5 @@ int	ft_putunbr(unsigned int n)
 	if (n >= 10)
 		len += ft_putunbr(n / 10);
 	len += ft_putchar(n % 10 + '0');
-	return (len);
-}
-
-int	ft_puthex(unsigned int n, char format)
-{
-	int len;
-	char *base;
-
-	len = 0;
-	if (format == 'x')
-		base = "0123456789abcdef";
-	else
-		base = "0123456789ABCDEF";
-	if (n >= 16)
-		len += ft_puthex(n / 16, format);
-	len += ft_putchar(base[n % 16]);
 	return (len);
 }
