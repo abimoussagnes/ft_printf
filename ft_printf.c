@@ -6,13 +6,13 @@
 /*   By: aabi-mou <aabi-mou@student.42beirut.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 15:06:33 by aabi-mou          #+#    #+#             */
-/*   Updated: 2025/11/14 12:23:23 by aabi-mou         ###   ########.fr       */
+/*   Updated: 2025/11/14 12:27:09 by aabi-mou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_puthex(unsigned int n, char format)
+int	ft_puthex(unsigned int n, char format)
 {
 	int		len;
 	char	*base;
