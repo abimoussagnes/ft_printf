@@ -34,11 +34,10 @@ int ft_printf(const char *format, ...);
 - `ft_printf.h` – public header with prototypes and includes
 - `Makefile` – optional build script to produce a static library `libftprintf.a`
 
-Note: Filenames may differ slightly depending on your implementation; update this section as needed.
 
 ## Build
 
-Using the provided Makefile (if present):
+Using the provided Makefile:
 
 ```bash
 make            # builds libftprintf.a
