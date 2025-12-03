@@ -4,8 +4,7 @@ A minimal re-implementation of the C standard library function `printf`, develop
 
 ## Overview
 
-This project provides a subset of the behavior of `printf(3)` with a focus on correctness, robustness, and adherence to the subject constraints. It is typically used as a static library that you can link against from your C programs.
-
+This project provides a subset of the behavior of `printf(3)` with a focus on correctness, robustness, and adherence to the subject constraints.
 ## Supported Conversions
 
 - `%c` – print a single character
